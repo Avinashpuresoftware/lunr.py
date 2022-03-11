@@ -70,8 +70,12 @@ jobs:
                 python3.8 -m pip install --upgrade pip && \
                 python3.8 --version && \
                 uname -m && \
+                set -xe && \
+                python3.8 -VV && \
+                python3.8 -m site && \
                 python3.8 -m pip install --upgrade pip setuptools wheel && \
-                python3.8 -m pip install tox && \
+                python3.8 -m pip install --upgrade coverage[toml] virtualenv tox tox-gh-actions && \
                 python3.8 setup.py install && \
-                tox -e py38 && \
+                cd tests/acceptance_tests/javascript/ && npm install && \
+                python3.8 -m tox && \
                 deactivate'
