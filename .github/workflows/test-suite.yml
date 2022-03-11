@@ -74,7 +74,7 @@ jobs:
                 python3.8 -VV && \
                 python3.8 -m site && \
                 python3.8 -m pip install --upgrade pip setuptools wheel && \
-                python3.8 -m pip install --upgrade coverage[toml] virtualenv tox tox-gh-actions && \
+                python3.8 -m pip install --upgrade coverage[toml] virtualenv tox tox-gh-actions npm && \
                 python3.8 setup.py install && \
                 cd tests/acceptance_tests/javascript/ && npm install && \
                 python3.8 -m tox && \
