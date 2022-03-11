@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["3.6", "3.7", "3.8", "3.9", "3.10", "pypy3"]
+        python-version: ["3.8"]
 
     steps:
       - uses: "actions/checkout@v2"
@@ -78,5 +78,5 @@ jobs:
                 apt install npm -y && \
                 python3.8 setup.py install && \
                 cd tests/acceptance_tests/javascript/ && npm install && \
-                python3.8 -m tox && \
+                python3.8 -m tox -e py38 && \
                 deactivate'
